@@ -1,0 +1,44 @@
+body {
+  background-color: #d1d1d1;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+header {
+  background-color: black;
+  height: 6rem;
+}
+
+nav {
+  color: #ffd700;
+  padding: 2rem;
+}
+
+nav h1 {
+  font-weight: 700;
+}
+
+main {
+  margin-top: 2.5rem;
+}
+
+.card {
+  border: 2px solid rgba(0, 0, 0, 0.692);
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+  padding: 1.2rem;
+  transition: 0.3s;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.container-card {
+    border: 2px solid saddlebrown;
+    margin: .2rem;
+}
