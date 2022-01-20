@@ -30,14 +30,12 @@ nav h1 {
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
-  
-  justify-content: space-between;
-  flex-flow: row;
-
   margin-top: 2rem;
 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-items: flex-start;
 }
 
 .dm-card-container {
@@ -45,7 +43,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: .9rem;
+  margin-bottom: 0.9rem;
   max-width: 20rem;
   padding: 1.5rem;
   background-color: #fff;
@@ -54,5 +52,14 @@ main {
 
 .dm-card-container img {
   width: 15rem;
-  height: auto;
+  height: 15rem;
+}
+
+.card-body {
+  justify-content: end;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
