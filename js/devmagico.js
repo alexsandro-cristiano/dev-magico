@@ -39,6 +39,8 @@ async function init() {
   personagem.forEach((element) => {
     root.appendChild(criarCartao(element));
   });
+
+  
 }
 
 init()
