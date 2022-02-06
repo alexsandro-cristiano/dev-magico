@@ -1,0 +1,112 @@
+:root {
+  --gryffindor-red: #7f0909;
+  --gryffindor-yellow: #ffc500;
+  --slytherin-green: #0d6217;
+  --slytherin-gray: #aaa;
+  --hufflepuff-yellow: #eee117;
+  --hufflepuff-black: #000;
+  --ravenclaw-blue: #000a90;
+  --ravenclaw-caramelo: #946b2d;
+
+  --color-aside-default: #d3a625;
+  --color-aside-hover: #ffc500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  background: #cecece;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  margin: 0 3.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+
+  width: 90vw;
+  height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  height: 100%;
+  width: 30rem;
+
+  background: var(--hufflepuff-black);
+  color: var(--color-aside-default);
+
+  box-shadow: 3px 0px 2px var(--color-aside-default);
+}
+
+.sidebar-logo {
+  padding: 1rem;
+  margin: 0 auto;
+
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  transition: color 0.5s;
+}
+
+.sidebar-logo:hover {
+  color: var(--color-aside-hover);
+}
+
+.sidebar-nav {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  padding: 1.2rem;
+  margin-top: 5rem;
+}
+
+.sidebar-nav-item-button {
+  padding: 0.9rem 2rem;
+  font-size: 1.6rem;
+  color: #46444b;
+  line-height: 150%;
+  background: transparent;
+
+  border: 1px solid #46444b;
+  border-radius: 0.8rem;
+
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.active > .sidebar-nav-item-button,
+.sidebar-nav-item-button:hover {
+  border-radius: 3rem;
+  color: var(--ravenclaw-caramelo);
+  border-color: var(--color-aside-hover);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
