@@ -37,22 +37,24 @@ ul {
   display: flex;
   align-items: center;
   gap: 0.1rem;
-
-  width: 90vw;
-  height: 100vh;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
+  width: 15rem;
   height: 100%;
-  width: 30rem;
+
+  top: 0;
+  left: 0;
+  position: fixed;
 
   background: var(--hufflepuff-black);
   color: var(--color-aside-default);
 
+  padding-top: 40px;
+  z-index: 1;
   box-shadow: 3px 0px 2px var(--color-aside-default);
 }
 
@@ -107,6 +109,69 @@ ul {
 }
 
 main {
+  border: 10px solid #46444b;
+}
+
+/*
+.magico-list {
+  border: 1px solid #4809e9;
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4rem 3rem;
+
+  width: -moz-fit-content;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  margin-top: 2.5rem;
+}
+
+.magico-item {
+  width: calc(25% - 30px);
+}
+
+.magico-card {
   width: 100%;
-  height: 100%;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden; 
+}
+
+/*
+
+  width: 90vw;
+  height: 100vh;
+:not(:last-child)
+            <li class="magico-item">
+              <div class="magico-card">
+                <div class="magico-card-image-container">
+                  <img
+                    src="https://raw.githubusercontent.com/fedeperin/harry-potter-api-english/main/images/harry_potter.png"
+                    alt="TESTE"
+                    class="magico-card-image"
+                    */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 9rem;
+  margin-top: 3.2rem;
+  margin-left: 10rem;
+  padding: 3.2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--gryffindor-yellow);
+  background-color: var(--hufflepuff-black);
+
+  box-shadow: 0px -3px 2px var(--color-aside-default);
+}
+
+footer .sub-footer {
+  font-size: 1.6rem;
+  font-weight: 300;
 }
