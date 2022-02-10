@@ -120,8 +120,6 @@ main {
 .magico-card {
   width: 100%;
   border-radius: 1rem;
-  background-color: #f6f4f4;
-
   position: relative;
   top: 0;
   transition: all 0.2s ease-in-out;
@@ -129,7 +127,7 @@ main {
 
 .magico-card:hover {
   top: -20px;
-  box-shadow: 5px 20px 3px #999;
+  box-shadow: 5px 20px 3px var(--slytherin-gray);
 }
 
 .magico-card-image-container {
@@ -148,21 +146,25 @@ main {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 20px;
-  margin-bottom: 16px;
+  padding: 0.9rem 2rem;
+  margin-bottom: 1.6rem;
   visibility: hidden;
 
-  border: 1px solid rgb(216, 18, 18);
+  color: var(--hufflepuff-black);
 }
 
 .magico-card-info-active {
   visibility: visible;
 }
 
-.icon-arrow-down {
-  text-align: center;
-  width: 2.4rem;
-  height: 2.4rem;
+.magico-card-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.icon-arrow-down-circle {
+  cursor: pointer;
+  font-size: 2rem;
 }
 
 /* Footer */
