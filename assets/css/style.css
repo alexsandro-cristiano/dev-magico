@@ -21,7 +21,7 @@
 html,
 body {
   font-size: 62.5%;
-  background: #cecece;
+  background: #f1f1f1;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -31,12 +31,6 @@ body {
 
 ul {
   list-style: none;
-}
-
-.page {
-  display: flex;
-  align-items: center;
-  gap: 0.1rem;
 }
 
 .sidebar {
@@ -109,66 +103,94 @@ ul {
 }
 
 main {
-  border: 10px solid #46444b;
+  margin-left: 15.2rem;
+  height: 100%;
 }
 
-/*
 .magico-list {
-  border: 1px solid #4809e9;
-
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 4rem 3rem;
-
-  width: -moz-fit-content;
-  width: fit-content;
-  height: fit-content;
+  gap: 3rem 3rem;
   padding: 2rem;
-  margin-top: 2.5rem;
-}
-
-.magico-item {
-  width: calc(25% - 30px);
+  margin-top: 2rem;
 }
 
 .magico-card {
   width: 100%;
-  background: white;
-  border-radius: 0.5rem;
-  overflow: hidden; 
+  border-radius: 1rem;
+  background-color: #f6f4f4;
+
+  position: relative;
+  top: 0;
+  transition: all 0.2s ease-in-out;
 }
 
-/*
+.magico-card:hover {
+  top: -20px;
+  box-shadow: 5px 20px 3px #999;
+}
 
-  width: 90vw;
-  height: 100vh;
-:not(:last-child)
-            <li class="magico-item">
-              <div class="magico-card">
-                <div class="magico-card-image-container">
-                  <img
-                    src="https://raw.githubusercontent.com/fedeperin/harry-potter-api-english/main/images/harry_potter.png"
-                    alt="TESTE"
-                    class="magico-card-image"
-                    */
+.magico-card-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.magico-card-image {
+  border-radius: 1rem;
+  height: 20rem;
+}
+
+.magico-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 16px;
+  visibility: hidden;
+
+  border: 1px solid rgb(216, 18, 18);
+}
+
+.magico-card-info-active {
+  visibility: visible;
+}
+
+.icon-arrow-down {
+  text-align: center;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* Footer */
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
+  width: 100%;
   height: 9rem;
-  margin-top: 3.2rem;
+  margin-top: 0.2rem;
   margin-left: 10rem;
   padding: 3.2rem;
-  font-size: 2rem;
-  font-weight: 500;
-  color: var(--gryffindor-yellow);
   background-color: var(--hufflepuff-black);
 
   box-shadow: 0px -3px 2px var(--color-aside-default);
+
+  bottom: 0;
+  right: 0;
+  position: fixed;
+}
+
+footer p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--gryffindor-yellow);
 }
 
 footer .sub-footer {
