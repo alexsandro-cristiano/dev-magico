@@ -37,6 +37,7 @@ html,
 body {
   font-size: 62.5%;
   background: #f1f1f1;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Main */
@@ -73,7 +74,7 @@ body {
 .logo__title {
   width: 100%;
   height: 100%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-align: center;
 }
@@ -113,7 +114,7 @@ body {
 
 .icon,
 .nav__item__title {
-  color: #46444b;
+  color: var(--slytherin-gray);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -147,16 +148,14 @@ body {
   margin-bottom: 2rem;
 }
 
-/*
-
-
-
-main {
-  margin-left: 15.2rem;
+/* Main */
+.main-content {
+  margin-left: 5rem;
   height: 100%;
+  overflow: scroll;
 }
 
-.magico-list {
+.main__list {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -166,7 +165,7 @@ main {
   margin-top: 2rem;
 }
 
-.magico-card {
+.card {
   width: 100%;
   border-radius: 1rem;
   position: relative;
@@ -174,23 +173,23 @@ main {
   transition: all 0.2s ease-in-out;
 }
 
-.magico-card:hover {
+.card:hover {
   top: -20px;
   box-shadow: 5px 20px 3px var(--slytherin-gray);
 }
 
-.magico-card-image-container {
+.card__image {
+  border-radius: 1rem;
+  height: 20rem;
+}
+
+.card__image__container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.magico-card-image {
-  border-radius: 1rem;
-  height: 20rem;
-}
-
-.magico-card-info {
+.card__info {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -202,20 +201,20 @@ main {
   color: var(--hufflepuff-black);
 }
 
-.magico-card-info-active {
+.card__info--active {
   visibility: visible;
 }
 
-.magico-card-name {
+.card__info__title {
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-.icon-arrow-down-circle {
+.card__info__icon {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
-*/
+
 /* Footer */
 footer {
   display: flex;
