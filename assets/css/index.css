@@ -62,7 +62,6 @@ body {
 }
 
 .logo {
-  padding: 1rem;
   margin: 0 auto;
   transition: color 0.3s;
 }
@@ -74,7 +73,7 @@ body {
 .logo__title {
   width: 100%;
   height: 100%;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
 }

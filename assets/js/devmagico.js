@@ -1,12 +1,6 @@
 function modificarLogo() {
-  //n deu certo
-  const h1 = document.querySelector('.logo__title').innerHTML
-  console.log(h1)
-
-  h1.innerText = 'foda-se'
-  if (h1.length == ' ') {
-    console.log('entrat no if de DM')
-  }
+  const h1 = document.querySelector('.logo__title')
+  h1.classList.toggle('logo__title--open')
 }
 
 function ToggleSideBar(sidebarArrow) {
