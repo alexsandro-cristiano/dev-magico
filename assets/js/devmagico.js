@@ -3,7 +3,7 @@ function modificarLogo() {
   h1.classList.toggle('logo__title--open')
 }
 
-function ToggleSideBar(sidebarArrow) {
+function modifySideBar(sidebarArrow) {
   modificarLogo()
   const sidebar = document.querySelector('.sidebar')
   const itemList = document.querySelectorAll('.nav__item__title')
@@ -17,10 +17,32 @@ function ToggleSideBar(sidebarArrow) {
   }
 }
 
+function renderInfo(event) {
+  switch (event) {
+    case 'livro':
+      console.log('livro')
+      break
+    case 'personagem':
+      console.log('personagem')
+      break
+    case 'funcionario':
+      console.log('funcionario')
+      break
+    case 'fentico':
+      console.log('fentico')
+      break
+  }
+}
+
 function init() {
   const sidebarArrow = document.querySelector('.js-icon')
   sidebarArrow.addEventListener('click', () => {
-    ToggleSideBar(sidebarArrow)
+    modifySideBar(sidebarArrow)
+  })
+
+  const list = document.getElementById('list')
+  list.addEventListener('click', event => {
+    renderInfo(event.target.id)
   })
 }
 
