@@ -230,6 +230,10 @@ footer {
   position: fixed;
 }
 
+footer .logo__title {
+  color: var(--color-aside-default);
+  font-size: 1.4rem;
+}
 footer p {
   font-size: 1.2rem;
   font-weight: 500;
