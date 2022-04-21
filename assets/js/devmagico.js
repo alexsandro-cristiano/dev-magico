@@ -17,19 +17,58 @@ function modifySideBar(sidebarArrow) {
   }
 }
 
-function renderInfo(event) {
+async function getInformation(url) {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      //o que fazer aqui ?
+    })
+    .catch(e => console.log(e))
+}
+
+/**
+ * pegar as coisas daqui e exibir na tela lá no html
+ */
+function naosei() {
+  const html = `
+  <li class="main__item">
+            <div class="card">
+              <div class="card__image__container">
+                <img
+                  src=""
+                  alt="TESTE"
+                  class="card__image"
+                />
+              </div>
+              <div class="card__info card__info--active">
+                <h3 class="card__info__title">Teste 1</h3>
+                <i class="card__info__icon icon-arrow-down"></i>
+              </div>
+            </div>
+          </li>
+  `
+  const mainUl = document.getElementsByClassName('main__list')
+}
+
+function switchOption(event) {
+  let url = 'https://fedeperin-harry-potter-api.herokuapp.com/'
+  let information
   switch (event) {
     case 'livro':
-      console.log('livro')
+      url += 'libros'
+      getInformation(url)
       break
     case 'personagem':
-      console.log('personagem')
-      break
-    case 'funcionario':
-      console.log('funcionario')
+      url += 'personajes'
+      getInformation(url)
       break
     case 'fentico':
-      console.log('fentico')
+      url += 'hechizos'
+      getInformation(url)
+      break
+    case 'funcionario':
+      url = 'http://hp-api.herokuapp.com/api/characters/staff'
+      getInformation(url)
       break
   }
 }
@@ -40,9 +79,9 @@ function init() {
     modifySideBar(sidebarArrow)
   })
 
-  const list = document.getElementById('list')
-  list.addEventListener('click', event => {
-    renderInfo(event.target.id)
+  const menuList = document.getElementById('list')
+  menuList.addEventListener('click', event => {
+    switchOption(event.target.id)
   })
 }
 
