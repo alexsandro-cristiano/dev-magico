@@ -49,38 +49,37 @@ async function getInformation(url) {
 
 async function switchOption(event) {
   let url = 'https://fedeperin-harry-potter-api.herokuapp.com/'
-  let arrayteste = []
+  let information = []
   switch (event) {
     case 'livro':
       url += 'libros'
-      arrayteste = await getInformation(url)
-
-      console.log('\ntamanho do array = ' + `${arrayteste.length}`)
-
-      arrayteste.forEach((element) => {
-        console.log('bla')
+      information = await getInformation(url)
+      const mainUl = document.querySelector('.main__list')
+      mainUl.innerHTML = ''
+      information.forEach((element) => {
         const html = `
           <li class="main__item">
-            <div class="card">
+            <div
+              class="card"
+              style="border: 1px solid rgba(61, 61, 61, 0.425); width: 300px"
+            >
+              <div class="card__image__container">
+                <i
+                  class="icon icon-book"
+                  style="cursor: default;font-size: 4rem; color: rgba(14, 13, 13, 0.815)"
+                ></i>
+              </div>
               <div class="card__info card__info--active">
-                <h3 class="card__info__title">${element.titulo_original}</h3>
-                <h3 class="card__info__title">${element.autora}</h3>
-                <p class="card__info__title">${element.descripcion}</p>
+                <h3 class="card__info__title">
+                ${element.libro}
+                </h3>
                 <i class="card__info__icon icon-arrow-down"></i>
               </div>
             </div>
           </li>
   `
-        const mainUl = document.querySelector('.main__list')
-        console.log(mainUl)
         mainUl.insertAdjacentHTML('beforeend', html)
       })
-      /**
-       * estou fazendo a requisição
-       * estou guardando a resposta que é um vetor na variavel
-       * estou varrendo a variavel e exibindo no console o nome do livro
-       */
-
       break
     case 'personagem':
       url += 'personajes'
