@@ -152,7 +152,7 @@ body {
 .main-content {
   margin-left: 5rem;
   height: 100%;
-  /*overflow: scroll;*/
+  overflow: scroll;
 }
 
 .main__list {

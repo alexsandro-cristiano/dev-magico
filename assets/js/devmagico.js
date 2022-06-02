@@ -17,30 +17,6 @@ function modifySideBar(sidebarArrow) {
   }
 }
 
-/**
- * pegar as coisas daqui e exibir na tela lá no html
- */
-function naosei() {
-  const html = `
-  <li class="main__item">
-            <div class="card">
-              <div class="card__image__container">
-                <img
-                  src=""
-                  alt=""
-                  class="card__image"
-                />
-              </div>
-              <div class="card__info card__info--active">
-                <h3 class="card__info__title"></h3>
-                <i class="card__info__icon icon-arrow-down"></i>
-              </div>
-            </div>
-          </li>
-  `
-  const mainUl = document.getElementsByClassName('main__list')
-}
-
 async function getInformation(url) {
   const response = await fetch(url)
   const jsonBody = await response.json()
@@ -54,55 +30,47 @@ async function switchOption(event) {
     case 'livro':
       url += 'libros'
       information = await getInformation(url)
-      const mainUl = document.querySelector('.main__list')
-      mainUl.innerHTML = ''
-      information.forEach((element) => {
-        const html = `
-          <li class="main__item">
-            <div
-              class="card"
-              style="border: 1px solid rgba(61, 61, 61, 0.425); width: 300px"
-            >
-              <div class="card__image__container">
-                <i
-                  class="icon icon-book"
-                  style="cursor: default;font-size: 4rem; color: rgba(14, 13, 13, 0.815)"
-                ></i>
-              </div>
-              <div class="card__info card__info--active">
-                <h3 class="card__info__title">
-                ${element.libro}
-                </h3>
-                <i class="card__info__icon icon-arrow-down"></i>
-              </div>
-            </div>
-          </li>
-  `
-        mainUl.insertAdjacentHTML('beforeend', html)
-      })
+
+      /**
+       * information é 1 vetor com todos os dados já salvos
+       *
+       * quero exibir na tela de 10 em 10
+       */
+      console.log(information)
       break
     case 'personagem':
       url += 'personajes'
-      console.log('\n estou na funcao\n\n\n')
-      console.log(await getInformation(url))
+      information = await getInformation(url)
+      console.log(information)
       break
     case 'fentico':
       url += 'hechizos'
-      console.log('\n estou na funcao\n\n\n')
-      console.log(await getInformation(url))
+      information = await getInformation(url)
+      console.log(information)
       break
     case 'funcionario':
       url = 'http://hp-api.herokuapp.com/api/characters/staff'
-      console.log('\n estou na funcao\n\n\n')
-      console.log(await getInformation(url))
+      information = await getInformation(url)
+      console.log(information)
       break
   }
+}
+
+function openInformation(cardArrow) {
+  cardArrow.classList.toggle('icon-arrow-down')
+  cardArrow.classList.toggle('icon-arrow-up')
 }
 
 function init() {
   const sidebarArrow = document.querySelector('.js-icon')
   sidebarArrow.addEventListener('click', () => {
     modifySideBar(sidebarArrow)
+  })
+
+  const cardArrow = document.querySelectorAll('.js-icon-arrow-card')
+  console.log(cardArrow)
+  cardArrow.addEventListener('click', () => {
+    openInformation(cardArrow)
   })
 
   const menuList = document.getElementById('list')
