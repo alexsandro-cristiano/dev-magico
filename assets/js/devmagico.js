@@ -1,21 +1,4 @@
-function modificarLogo() {
-  const h1 = document.querySelector('.logo__title')
-  h1.classList.toggle('logo__title--open')
-}
-
-function modifySideBar(sidebarArrow) {
-  modificarLogo()
-  const sidebar = document.querySelector('.sidebar')
-  const itemList = document.querySelectorAll('.nav__item__title')
-
-  sidebar.classList.toggle('sidebar--open')
-  sidebarArrow.classList.toggle('icon-arrow-right')
-  sidebarArrow.classList.toggle('icon-arrow-left')
-
-  for (const item of itemList) {
-    item.classList.toggle('nav__item__title--open')
-  }
-}
+import * as sidebar from './sidebar.js'
 
 async function getInformation(url) {
   const response = await fetch(url)
@@ -62,11 +45,6 @@ function openInformation(cardArrow) {
 }
 
 function init() {
-  const sidebarArrow = document.querySelector('.js-icon')
-  sidebarArrow.addEventListener('click', () => {
-    modifySideBar(sidebarArrow)
-  })
-
   const cardArrow = document.querySelectorAll('.js-icon-arrow-card')
   console.log(cardArrow)
   cardArrow.addEventListener('click', () => {
@@ -74,9 +52,10 @@ function init() {
   })
 
   const menuList = document.getElementById('list')
-  menuList.addEventListener('click', (event) => {
+  menuList.addEventListener('click', event => {
     switchOption(event.target.id)
   })
 }
 
+sidebar.init()
 init()
