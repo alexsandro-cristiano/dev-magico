@@ -16,15 +16,12 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
-
 button {
   background: transparent;
   padding: 0;
   border: 0;
   cursor: pointer;
+  border: 2px solid red;
 }
 
 ul {
@@ -53,7 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   width: min(100%, 5rem);
-  height: calc(100% - 3.3rem);
+  height: calc(100% - 7.7rem);
   background: var(--hufflepuff-black);
   color: var(--color-aside-default);
 
@@ -97,7 +94,7 @@ body {
 }
 
 .nav__item .nav__item__title {
-  margin: 0;
+  margin-top: 2.5rem;
   padding: 0.2rem;
 }
 
@@ -120,6 +117,7 @@ body {
 }
 
 .icon:hover,
+.active,
 .nav__item__title:hover {
   color: var(--color-aside-hover);
 }
@@ -243,7 +241,7 @@ footer {
   justify-content: space-around;
   flex-direction: column;
   width: 100%;
-  height: 3rem;
+  height: 12em;
   background-color: var(--hufflepuff-black);
   box-shadow: 0px -3px 2px var(--color-aside-default);
 
@@ -253,10 +251,10 @@ footer {
 
 footer .logo__title {
   color: var(--color-aside-default);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 footer p {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #fff;
   margin: 0.2rem;
