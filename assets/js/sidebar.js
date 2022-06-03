@@ -1,6 +1,8 @@
+import * as menuList from './menuSidebar.js'
+
 function modificarLogo() {
-  const h1 = document.querySelector('.logo__title')
-  h1.classList.toggle('logo__title--open')
+  const tagH1 = document.querySelector('.logo__title')
+  tagH1.classList.toggle('logo__title--open')
 }
 
 function expandSidebar(sidebarArrow) {
