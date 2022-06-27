@@ -48,7 +48,7 @@ async function switchOption(option) {
       informations = await request.getJson(url)
       ulMainCard.innerHTML = ''
       for (const inf of informations) {
-        renderCard.renderLibros(inf, ulMainCard)
+        renderCard.renderFentico(inf, ulMainCard)
       }
       break
     case 'funcionario':
@@ -56,7 +56,7 @@ async function switchOption(option) {
       informations = await request.getJson(url)
       ulMainCard.innerHTML = ''
       for (const inf of informations) {
-        renderCard.renderLibros(inf, ulMainCard)
+        renderCard.renderFuncionario(inf, ulMainCard)
       }
       break
   }

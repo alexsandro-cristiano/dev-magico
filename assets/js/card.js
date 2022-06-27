@@ -21,6 +21,58 @@ export function renderLibros(element, ulMainCard) {
   ulMainCard.insertAdjacentHTML('beforeend', html)
 }
 
+export function renderFentico(element, ulMainCard) {
+  const html = `
+  <li class="item">
+           <div class="card cardFentico">
+            <div class="cardHeader">
+              <i class="icon-magic-wand"></i>
+            </div>
+            <div class="cardBody">
+            <div class="cardTitle">
+            ${element.hechizo}
+            </div>
+            <p class="card__info__title">${element.uso}</p>
+            
+            </div>
+           </div>
+          </li>
+  `
+  ulMainCard.insertAdjacentHTML('beforeend', html)
+}
+
 export function renderPersonagem(element, ulMainCard) {
-  console.log(element)
+  const html = `
+  <li class="item">
+           <div class="card">
+            <div class="cardHeader">
+            <img src="${element.imagen}" alt="${element.apodo}">
+            </div>
+            <div class="cardBody cardBodyP">
+            <p>${element.personaje}</p>
+            </div>
+            <div class="cardFooter">
+            <p>${element.casaDeHogwarts}</p>
+          </div>
+          </li>
+  `
+  ulMainCard.insertAdjacentHTML('beforeend', html)
+}
+
+export function renderFuncionario(element, ulMainCard) {
+  const html = `
+  <li class="item">
+           <div class="card">
+            <div class="cardHeader">
+            <img src="${element.image}" alt="${element.name}">
+            </div>
+            <div class="cardBody cardBodyP">
+            <p>${element.name}</p>
+            </div>
+            <div class="cardFooter">
+            <p>${element.house}</p>
+          </div>
+          </li>
+  `
+  ulMainCard.insertAdjacentHTML('beforeend', html)
 }
