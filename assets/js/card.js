@@ -58,21 +58,3 @@ export function renderPersonagem(element, ulMainCard) {
   `
   ulMainCard.insertAdjacentHTML('beforeend', html)
 }
-
-export function renderFuncionario(element, ulMainCard) {
-  const html = `
-  <li class="item">
-           <div class="card">
-            <div class="cardHeader">
-            <img src="${element.image}" alt="${element.name}">
-            </div>
-            <div class="cardBody cardBodyP">
-            <p>${element.name}</p>
-            </div>
-            <div class="cardFooter">
-            <p>${element.house}</p>
-          </div>
-          </li>
-  `
-  ulMainCard.insertAdjacentHTML('beforeend', html)
-}

@@ -51,14 +51,6 @@ async function switchOption(option) {
         renderCard.renderFentico(inf, ulMainCard)
       }
       break
-    case 'funcionario':
-      url = 'http://hp-api.herokuapp.com/api/characters/staff'
-      informations = await request.getJson(url)
-      ulMainCard.innerHTML = ''
-      for (const inf of informations) {
-        renderCard.renderFuncionario(inf, ulMainCard)
-      }
-      break
   }
 }
 
@@ -84,18 +76,3 @@ function init() {
 
 init()
 window.onload = switchOption('livro')
-
-/*
-function openInformation(cardArrow) {
-  cardArrow.classList.toggle('icon-arrow-down')
-  cardArrow.classList.toggle('icon-arrow-up')
-}
-
-function init() {
-  const cardArrow = document.querySelectorAll('.js-icon-arrow-card')
-  console.log(cardArrow)
-  cardArrow.addEventListener('click', () => {
-    openInformation(cardArrow)
-  })
-}
-*/
