@@ -1,28 +1,37 @@
 .card {
-  max-width: 350px;
+  max-width: 300px;
+  width: 100%;
+  height: 30rem;
   padding: 1rem;
   text-align: left;
   border: 1px solid var(--hufflepuff-black);
   transition: all 0.2s ease-in-out;
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 .card:hover {
   transform: translateY(-2.1rem);
   box-shadow: 5px 20px 3px var(--slytherin-gray);
 }
 .cardHeader {
-  display: flex;
-  justify-content: center;
-}
-.cardHeader .icon {
-  color: black;
-  top: -50px;
+  text-align: center;
   font-size: 2rem;
 }
+.cardBody .cardTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
 .cardBody {
-  background: rgb(13, 158, 224);
+  color: rgb(26, 14, 70);
+  font-size: 1.2rem;
 }
 .cardFooter {
-  background: rgb(55, 224, 13);
+  font-size: 1.2rem;
+  margin-top: -10px;
 }
 .card__image {
   border-radius: 1rem;
@@ -46,10 +55,6 @@
 }
 .card__info--active {
   visibility: visible;
-}
-.card__info__title {
-  font-size: 1.2rem;
-  font-weight: 500;
 }
 .card__info__icon {
   cursor: pointer;

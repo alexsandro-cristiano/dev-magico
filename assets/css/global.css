@@ -32,10 +32,9 @@ body {
 /* Main */
 .main {
   margin-left: 2.5rem;
-  margin-bottom: 50rem;
   overflow: scroll;
+  overflow-x: hidden;
   margin-bottom: 3rem;
-  border: 2px solid slateblue;
 }
 
 .list {
@@ -44,8 +43,7 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 3rem 3rem;
-  padding: 2rem;
-  margin-top: 2rem;
+  padding: 2rem 0;
 }
 
 /* Footer */
@@ -55,7 +53,7 @@ footer {
   justify-content: space-around;
   flex-direction: column;
   width: 100%;
-  height: 5em;
+  height: 3rem;
   background-color: var(--hufflepuff-black);
   box-shadow: 0px -3px 2px var(--color-aside-default);
 
