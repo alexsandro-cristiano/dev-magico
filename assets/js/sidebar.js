@@ -1,8 +1,7 @@
 import * as menuList from './menuSidebar.js'
-
 function modificarLogo() {
-  const tagH1 = document.querySelector('.logo__title')
-  tagH1.classList.toggle('logo__title--open')
+  const logo = document.querySelector('.logo__title')
+  logo.classList.toggle('logo__title--open')
 }
 
 function expandSidebar(sidebarArrow) {
@@ -21,6 +20,7 @@ function expandSidebar(sidebarArrow) {
 
 export function init() {
   const sidebarArrow = document.querySelector('.js-icon')
+  menuList.init()
   sidebarArrow.addEventListener('click', () => {
     expandSidebar(sidebarArrow)
   })
