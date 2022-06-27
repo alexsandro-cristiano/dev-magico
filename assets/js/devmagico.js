@@ -15,5 +15,3 @@ function init() {
 }
 */
 sidebar.init()
-
-init()

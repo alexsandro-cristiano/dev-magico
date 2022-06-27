@@ -1,4 +1,5 @@
 import * as request from './request.js'
+let antigo = ''
 
 async function switchOption(option) {
   let url = 'https://fedeperin-harry-potter-api.herokuapp.com/'
@@ -20,26 +21,16 @@ async function switchOption(option) {
     case 'funcionario':
       url = 'http://hp-api.herokuapp.com/api/characters/staff'
       informations = await request.getJson(url)
-      activateMenuAtCurrentItem('funcionario')
-
       break
   }
 }
 
-let antigo = 'num'
 function activateMenuAtCurrentItem(novo) {
   document.getElementById(`${novo}`).classList.add('active')
-  document.getElementById(`${antigo}`).classList.remove('active')
-  /*
-  document
-    .querySelector('nav ul li a[href*=' + sectionId + ']')
-    .classList.remove('active')*/
+  if (antigo !== '') {
+    document.getElementById(`${antigo}`).classList.remove('active')
+  }
   antigo = novo
-  /**
-   *
-   * remove do anterior
-   * adiciona no novo
-   */
 }
 
 export function init() {
