@@ -1,13 +1,28 @@
 .card {
-  width: 100%;
-  border-radius: 1rem;
-  position: relative;
-  top: 0;
+  max-width: 350px;
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid var(--hufflepuff-black);
   transition: all 0.2s ease-in-out;
 }
 .card:hover {
-  top: -20px;
+  transform: translateY(-2.1rem);
   box-shadow: 5px 20px 3px var(--slytherin-gray);
+}
+.cardHeader {
+  display: flex;
+  justify-content: center;
+}
+.cardHeader .icon {
+  color: black;
+  top: -50px;
+  font-size: 2rem;
+}
+.cardBody {
+  background: rgb(13, 158, 224);
+}
+.cardFooter {
+  background: rgb(55, 224, 13);
 }
 .card__image {
   border-radius: 1rem;

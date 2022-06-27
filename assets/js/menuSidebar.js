@@ -1,4 +1,5 @@
 import * as request from './request.js'
+import * as renderCard from './card.js'
 let antigo = ''
 
 async function switchOption(option) {
@@ -9,6 +10,9 @@ async function switchOption(option) {
     case 'livro':
       url += 'libros'
       informations = await request.getJson(url)
+      for (const inf of informations) {
+        renderCard.renderLibros(inf)
+      }
       break
     case 'personagem':
       url += 'personajes'
@@ -39,3 +43,5 @@ export function init() {
     switchOption(event.target.id)
   })
 }
+
+window.onload = switchOption('livro')
