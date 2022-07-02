@@ -21,7 +21,7 @@
     />
   </head>
   <body>
-    <div id="wrapper">
+    <div id="app">
       <aside class="sidebar">
         <div class="logo">
           <h1 class="logo__title">DM</h1>
@@ -29,27 +29,76 @@
         <nav class="nav">
           <ul id="list" class="nav__list">
             <li class="nav__item">
-              <i id="livro" class="icon icon-book" title="livro"></i>
+              <i id="livro" class="icon icon-book" title="libro"></i>
               <p id="livro" class="nav__item__title">Libros</p>
             </li>
             <li class="nav__item">
               <i
                 id="personagem"
                 class="icon icon-profile"
-                title="personagem"
+                title="personajes"
               ></i>
               <p id="personagem" class="nav__item__title">Personajes</p>
             </li>
             <li class="nav__item">
-              <i id="fentico" class="icon icon-magic-wand" title="fentiços"></i>
+              <i id="fentico" class="icon icon-magic-wand" title="hechizos"></i>
               <p id="fentico" class="nav__item__title">Hechizos</p>
             </li>
           </ul>
         </nav>
         <div class="icon js-icon icon-arrow-right"></div>
       </aside>
-      <main class="main">
-        <ul class="list"></ul>
+      <main id="main">
+        <ul class="list">
+          <li>
+            <h3 class="title">Lufa Lufa</h3>
+
+            <div class="wrapper">
+              <!-- Swiper -->
+              <div class="swiper g">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card__img">
+                        <img
+                          src="http://hp-api.herokuapp.com/images/lupin.jpg"
+                          alt="Lucius Malfoy"
+                        />
+                      </div>
+                      <div class="card__name">Lucius Malfoy</div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card__img">
+                        <img
+                          src="http://hp-api.herokuapp.com/images/lupin.jpg"
+                          alt="Lucius Malfoy"
+                        />
+                      </div>
+                      <div class="card__name">Lucius Malfoy</div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card__img">
+                        <img
+                          src="http://hp-api.herokuapp.com/images/lupin.jpg"
+                          alt="Lucius Malfoy"
+                        />
+                      </div>
+                      <div class="card__name">Lucius Malfoy</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- Swiper -->
+            </div>
+          </li>
+        </ul>
       </main>
     </div>
     <footer class="shadow">
@@ -59,41 +108,23 @@
       </p>
     </footer>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script>
-      let chave = 1
-      function modificarLogo() {
-        const logo = document.querySelector('.logo__title')
-        if (chave == 1) {
-          logo.innerHTML = 'Dev Mágico'
-          chave = 0
-        } else {
-          logo.innerHTML = 'DM'
-          chave = 1
+      var swiper = new Swiper('.g', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+        keyboard: {
+          enabled: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
         }
-        console.log(logo)
-        logo.classList.toggle('logo__title--open')
-      }
-
-      function expandSidebar(sidebarArrow) {
-        const sidebar = document.querySelector('.sidebar')
-        const itemList = document.querySelectorAll('.nav__item__title')
-
-        sidebar.classList.toggle('sidebar--open')
-        sidebarArrow.classList.toggle('icon-arrow-right')
-        sidebarArrow.classList.toggle('icon-arrow-left')
-        modificarLogo()
-        for (const item of itemList) {
-          item.classList.toggle('nav__item__title--open')
-        }
-      }
-      const sidebarArrow = document.querySelector('.js-icon')
-      const menuList = document.getElementById('list')
-
-      sidebarArrow.addEventListener('click', () => {
-        expandSidebar(sidebarArrow)
-      })
-      menuList.addEventListener('click', event => {
-        switchOption(event.target.id)
       })
     </script>
     <!-- 

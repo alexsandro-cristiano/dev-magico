@@ -2,9 +2,16 @@ import * as request from './request.js'
 import * as renderCard from './card.js'
 const ulMainCard = document.querySelector('.main .list')
 let antigo = ''
-
+let chave = 1
 function modificarLogo() {
   const logo = document.querySelector('.logo__title')
+  if (chave == 1) {
+    logo.innerHTML = 'Dev Mágico'
+    chave = 0
+  } else {
+    logo.innerHTML = 'DM'
+    chave = 1
+  }
   logo.classList.toggle('logo__title--open')
 }
 
@@ -64,12 +71,12 @@ function activateMenuAtCurrentItem(novo) {
 
 function init() {
   const sidebarArrow = document.querySelector('.js-icon')
-  const menuList = document.getElementById('list')
+  const sidebarMenuList = document.getElementById('list')
 
   sidebarArrow.addEventListener('click', () => {
     expandSidebar(sidebarArrow)
   })
-  menuList.addEventListener('click', event => {
+  sidebarMenuList.addEventListener('click', event => {
     switchOption(event.target.id)
   })
 }
