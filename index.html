@@ -12,15 +12,19 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="./assets/fonts/style.css" />
     <link rel="stylesheet" href="./assets/css/global.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div id="wrapper">
       <aside class="sidebar">
         <div class="logo">
-          <h1 class="logo__title">Dev Mágico</h1>
+          <h1 class="logo__title">DM</h1>
         </div>
         <nav class="nav">
           <ul id="list" class="nav__list">
@@ -48,12 +52,52 @@
         <ul class="list"></ul>
       </main>
     </div>
-    <footer>
+    <footer class="shadow">
       <p>
         <span class="logo__title">Dev Mágico</span> - Consumo de API sobre Harry
         Potter | Desenvolvedor Alexsandro Cristiano
       </p>
     </footer>
-    <script type="module" src="./assets/js/devmagico.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      let chave = 1
+      function modificarLogo() {
+        const logo = document.querySelector('.logo__title')
+        if (chave == 1) {
+          logo.innerHTML = 'Dev Mágico'
+          chave = 0
+        } else {
+          logo.innerHTML = 'DM'
+          chave = 1
+        }
+        console.log(logo)
+        logo.classList.toggle('logo__title--open')
+      }
+
+      function expandSidebar(sidebarArrow) {
+        const sidebar = document.querySelector('.sidebar')
+        const itemList = document.querySelectorAll('.nav__item__title')
+
+        sidebar.classList.toggle('sidebar--open')
+        sidebarArrow.classList.toggle('icon-arrow-right')
+        sidebarArrow.classList.toggle('icon-arrow-left')
+        modificarLogo()
+        for (const item of itemList) {
+          item.classList.toggle('nav__item__title--open')
+        }
+      }
+      const sidebarArrow = document.querySelector('.js-icon')
+      const menuList = document.getElementById('list')
+
+      sidebarArrow.addEventListener('click', () => {
+        expandSidebar(sidebarArrow)
+      })
+      menuList.addEventListener('click', event => {
+        switchOption(event.target.id)
+      })
+    </script>
+    <!-- 
+      <script type="module" src="./assets/js/devmagico.js"></script>
+    -->
   </body>
 </html>
