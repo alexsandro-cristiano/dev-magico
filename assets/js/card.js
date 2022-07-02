@@ -42,19 +42,31 @@ export function renderFentico(element, ulMainCard) {
 }
 
 export function renderPersonagem(element, ulMainCard) {
-  const html = `
-  <li class="item">
-           <div class="card">
-            <div class="cardHeader">
-            <img src="${element.imagen}" alt="${element.apodo}">
-            </div>
-            <div class="cardBody cardBodyP">
-            <p>${element.personaje}</p>
-            </div>
-            <div class="cardFooter">
-            <p>${element.casaDeHogwarts}</p>
-          </div>
-          </li>
-  `
-  ulMainCard.insertAdjacentHTML('beforeend', html)
+  const li = document.createElement('li')
+  const wrapper = document.createElement('div')
+  const card = document.createElement('div')
+  const cardImg = document.createElement('div')
+  const cardName = document.createElement('div')
+  const image = document.createElement('img')
+
+  li.classList.add('personagem')
+  wrapper.classList.add('wrapper')
+  card.classList.add('card')
+  cardImg.classList.add('card__img')
+  cardName.classList.add('card__name')
+  cardName.innerHTML = `${element.name}`
+  if (element.image == '') {
+    image.src = 'https://images.unsplash.com/photo-1511367461989-f85a21fda167'
+  } else {
+    image.setAttribute('src', `${element.image}`)
+  }
+  image.setAttribute('alt', `${element.name}`)
+
+  cardImg.appendChild(image)
+  card.appendChild(cardImg)
+  card.appendChild(cardName)
+  wrapper.appendChild(card)
+  li.appendChild(wrapper)
+
+  ulMainCard.appendChild(li)
 }

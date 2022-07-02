@@ -1,6 +1,7 @@
 import * as request from './request.js'
 import * as renderCard from './card.js'
-const ulMainCard = document.querySelector('.main .list')
+
+const ulMainCard = document.querySelector('#main .list')
 let antigo = ''
 let chave = 1
 function modificarLogo() {
@@ -43,7 +44,7 @@ async function switchOption(option) {
       }
       break
     case 'personagem':
-      url += 'personajes'
+      url = 'http://hp-api.herokuapp.com/api/characters'
       informations = await request.getJson(url)
       ulMainCard.innerHTML = ''
       for (const inf of informations) {
