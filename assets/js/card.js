@@ -1,5 +1,4 @@
 export function renderLibros(element, ulMainCard) {
-  console.log(element.id)
   const li = document.createElement('li')
   const wrapper = document.createElement('div')
   const cardImg = document.createElement('div')
@@ -26,23 +25,30 @@ export function renderLibros(element, ulMainCard) {
 }
 
 export function renderFentico(element, ulMainCard) {
-  const html = `
-  <li class="item">
-           <div class="card cardFentico">
-            <div class="cardHeader">
-              <i class="icon-magic-wand"></i>
-            </div>
-            <div class="cardBody">
-            <div class="cardTitle">
-            ${element.hechizo}
-            </div>
-            <p class="card__info__title">${element.uso}</p>
-            
-            </div>
-           </div>
-          </li>
-  `
-  ulMainCard.insertAdjacentHTML('beforeend', html)
+  const li = document.createElement('li')
+  const wrapper = document.createElement('div')
+  const cardImg = document.createElement('div')
+  const boxData = document.createElement('div')
+  const autor = document.createElement('p')
+  const titulo = document.createElement('p')
+
+  li.classList.add('fentico')
+  wrapper.classList.add('box')
+  cardImg.classList.add('box-img')
+  cardImg.classList.add('icon-magic-wand')
+  boxData.classList.add('box-data')
+  titulo.classList.add('title')
+
+  autor.innerHTML = `${element.hechizo}`
+  titulo.innerHTML = `${element.uso}`
+
+  boxData.appendChild(autor)
+  boxData.appendChild(titulo)
+  wrapper.appendChild(cardImg)
+  wrapper.appendChild(boxData)
+  li.appendChild(wrapper)
+
+  ulMainCard.appendChild(li)
 }
 
 export function renderPersonagem(element, ulMainCard) {
