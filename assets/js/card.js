@@ -64,13 +64,13 @@ export function renderPersonagem(element, ulMainCard) {
   card.classList.add('card')
   cardImg.classList.add('card__img')
   cardName.classList.add('card__name')
-  cardName.innerHTML = `${element.name}`
+  cardName.innerHTML = `${element.personaje}`
   if (element.image == '') {
     image.src = 'https://images.unsplash.com/photo-1511367461989-f85a21fda167'
   } else {
-    image.setAttribute('src', `${element.image}`)
+    image.setAttribute('src', `${element.imagen}`)
   }
-  image.setAttribute('alt', `${element.name}`)
+  image.setAttribute('alt', `${element.apodo}`)
 
   cardImg.appendChild(image)
   card.appendChild(cardImg)
