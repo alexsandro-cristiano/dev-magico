@@ -1,23 +1,26 @@
 export function renderLibros(element, ulMainCard) {
-  const html = `
-  <li class="item">
-           <div class="card">
-            <div class="cardHeader">
-              <i class="icon-book"></i>
-            </div>
-            <div class="cardBody">
-            <div class="cardTitle">
-            ${element.libro}
-            </div>
-            <p class="card__info__title">${element.descripcion}</p>
-            
-            </div>
-            <div class="cardFooter">
-             <h3 class="card__info__title">${element.autora}</h3>
-            </div>
-           </div>
-          </li>
-  `
+  const li = document.createElement('li')
+  const wrapper = document.createElement('div')
+  const cardImg = document.createElement('div')
+  const boxData = document.createElement('div')
+  const autor = document.createElement('p')
+  const titulo = document.createElement('p')
+
+  wrapper.classList.add('box')
+  cardImg.classList.add('box-img')
+  boxData.classList.add('box-data')
+  titulo.classList.add('title')
+
+  autor.innerHTML = `${element.autora}`
+  titulo.innerHTML = `${element.libro}`
+
+  boxData.appendChild(autor)
+  boxData.appendChild(titulo)
+  wrapper.appendChild(cardImg)
+  wrapper.appendChild(boxData)
+  li.appendChild(wrapper)
+
+  ulMainCard.appendChild(li)
   ulMainCard.insertAdjacentHTML('beforeend', html)
 }
 
