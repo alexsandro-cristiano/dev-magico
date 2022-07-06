@@ -1,4 +1,5 @@
 export function renderLibros(element, ulMainCard) {
+  console.log(element.id)
   const li = document.createElement('li')
   const wrapper = document.createElement('div')
   const cardImg = document.createElement('div')
@@ -6,11 +7,12 @@ export function renderLibros(element, ulMainCard) {
   const autor = document.createElement('p')
   const titulo = document.createElement('p')
 
+  li.classList.add('libro')
   wrapper.classList.add('box')
   cardImg.classList.add('box-img')
   boxData.classList.add('box-data')
   titulo.classList.add('title')
-
+  cardImg.setAttribute('id', `hp${element.id}`)
   autor.innerHTML = `${element.autora}`
   titulo.innerHTML = `${element.libro}`
 
@@ -21,7 +23,6 @@ export function renderLibros(element, ulMainCard) {
   li.appendChild(wrapper)
 
   ulMainCard.appendChild(li)
-  ulMainCard.insertAdjacentHTML('beforeend', html)
 }
 
 export function renderFentico(element, ulMainCard) {

@@ -37,8 +37,8 @@ async function switchOption(option) {
   switch (option) {
     case 'livro':
       url += 'libros'
-      informations = await request.getJson(url)
       main.innerHTML = ''
+      informations = await request.getJson(url)
       for (const inf of informations) {
         renderCard.renderLibros(inf, main)
       }
