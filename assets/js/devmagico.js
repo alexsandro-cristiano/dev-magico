@@ -44,7 +44,7 @@ async function switchOption(option) {
       }
       break
     case 'personagem':
-      url = 'http://hp-api.herokuapp.com/api/characters'
+      url += 'personajes'
       informations = await request.getJson(url)
       main.innerHTML = ''
       for (const inf of informations) {
