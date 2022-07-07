@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevMágico</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,30 +13,26 @@
     />
     <link rel="stylesheet" href="./assets/fonts/style.css" />
     <link rel="stylesheet" href="./assets/css/global.css" />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
   </head>
   <body>
     <div id="app">
       <aside class="sidebar">
         <div class="logo">
           <h1 class="logo__title">DM</h1>
+          <div class="icon js-icon icon-menu"></div>
         </div>
         <nav class="nav">
           <ul id="list" class="nav__list">
+            <li class="nav__item">
+              <i id="sobre" class="icon icon-code" title="sobre"></i>
+              <p id="sobre" class="nav__item__title">Sobre</p>
+            </li>
             <li class="nav__item">
               <i id="livro" class="icon icon-book" title="libro"></i>
               <p id="livro" class="nav__item__title">Libros</p>
             </li>
             <li class="nav__item">
-              <i
-                id="personagem"
-                class="icon icon-profile"
-                title="personajes"
-              ></i>
+              <i id="personagem" class="icon icon-user" title="personajes"></i>
               <p id="personagem" class="nav__item__title">Personajes</p>
             </li>
             <li class="nav__item">
@@ -46,13 +41,8 @@
             </li>
           </ul>
         </nav>
-        <div class="icon js-icon icon-arrow-right"></div>
       </aside>
-      <main id="main">
-        <ul class="list">
-          <h1><-</h1>
-        </ul>
-      </main>
+      <main id="main"></main>
     </div>
     <footer class="shadow">
       <p>
@@ -60,28 +50,10 @@
         Potter | Desenvolvedor Alexsandro Cristiano
       </p>
     </footer>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <div class="modalContainer">
+      <div class="modalConteudo"></div>
+    </div>
 
-    <script>
-      var swiper = new Swiper('.g', {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        centeredSlides: true,
-        keyboard: {
-          enabled: true
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
-      })
-    </script>
-    <!-- 
-    -->
     <script type="module" src="./assets/js/devmagico.js"></script>
   </body>
 </html>

@@ -12,6 +12,7 @@ export function renderLibros(element, ulMainCard) {
   boxData.classList.add('box-data')
   titulo.classList.add('title')
   cardImg.setAttribute('id', `hp${element.id}`)
+  li.setAttribute('id', `${element.id}`)
   autor.innerHTML = `${element.autora}`
   titulo.innerHTML = `${element.libro}`
 
@@ -21,6 +22,7 @@ export function renderLibros(element, ulMainCard) {
   wrapper.appendChild(boxData)
   li.appendChild(wrapper)
 
+  ulMainCard.classList.add('list')
   ulMainCard.appendChild(li)
 }
 

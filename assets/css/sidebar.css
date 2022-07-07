@@ -1,8 +1,7 @@
-/* Sidebar Close */
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: min(100%, 5rem);
+  width: min(100%, 7rem);
   height: calc(100% - 3.3rem);
   background: var(--hufflepuff-black);
   color: var(--color-aside-default);
@@ -12,12 +11,17 @@
 }
 .logo {
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: color 0.3s;
+}
+.logo .icon {
+  font-size: 2rem;
 }
 .logo:hover {
   color: var(--color-aside-hover);
-  cursor: context-menu;
 }
 .logo__title {
   width: 100%;
@@ -69,16 +73,8 @@
 }
 /* Sidebar Open*/
 .sidebar--open {
-  width: min(100%, 15rem);
-}
-.logo__title--open {
-  font-size: 2.5rem;
-  padding: 0 2rem;
+  width: min(100%, 20rem);
 }
 .nav__item__title--open {
   visibility: visible;
-}
-.icon-arrow-left,
-.icon-arrow-right {
-  margin-bottom: 8rem;
 }
