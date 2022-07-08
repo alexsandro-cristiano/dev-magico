@@ -73,7 +73,7 @@ export function renderPersonagem(element, ulMainCard) {
     image.setAttribute('src', `${element.imagen}`)
   }
   image.setAttribute('alt', `${element.apodo}`)
-
+  li.setAttribute('id', `${element.id}`)
   cardImg.appendChild(image)
   card.appendChild(cardImg)
   card.appendChild(cardName)

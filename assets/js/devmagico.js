@@ -74,6 +74,44 @@ function dc(element, id) {
   modalConteudo.appendChild(wrapper)
   fecharModal(modal, modalConteudo)
 }
+function ac(element, id) {
+  const modal = document.querySelector('.modalContainer')
+  const modalConteudo = document.querySelector('.modalConteudo')
+  modal.classList.add('active')
+
+  const i = document.createElement('i')
+  const wrapper = document.createElement('div')
+  const cardImg = document.createElement('img')
+  const wrapperData = document.createElement('div')
+  const title = document.createElement('p')
+  const subtitleFecha = document.createElement('p')
+  const subtitleAutor = document.createElement('p')
+  const description = document.createElement('p')
+  i.classList.add('icon')
+  i.classList.add('icon-x')
+  i.classList.add('fechar')
+  cardImg.classList.add('img')
+  wrapper.classList.add('wrapper')
+  wrapperData.classList.add('informacao')
+  title.classList.add('title')
+  subtitleFecha.classList.add('sub-title')
+  subtitleAutor.classList.add('sub-title')
+  description.classList.add('description')
+  --id
+  cardImg.setAttribute('src', element[id].imagen)
+  title.innerHTML = `${element[id].personaje}`
+  subtitleFecha.innerHTML = `${element[id].casaDeHogwarts}`
+
+  wrapperData.appendChild(title)
+  wrapperData.appendChild(subtitleFecha)
+  wrapperData.appendChild(subtitleAutor)
+  wrapperData.appendChild(description)
+  wrapper.appendChild(cardImg)
+  wrapper.appendChild(wrapperData)
+  modalConteudo.appendChild(i)
+  modalConteudo.appendChild(wrapper)
+  fecharModal(modal, modalConteudo)
+}
 async function switchOption(option) {
   let url = 'https://fedeperin-harry-potter-api.herokuapp.com/'
   let informations = []
@@ -103,6 +141,12 @@ async function switchOption(option) {
       for (const inf of informations) {
         renderCard.renderPersonagem(inf, main)
       }
+      const personagem = document.querySelectorAll('.personagem')
+      personagem.forEach(el => {
+        el.addEventListener('click', () => {
+          ac(informations, el.id)
+        })
+      })
       break
     case 'fentico':
       url += 'hechizos'
