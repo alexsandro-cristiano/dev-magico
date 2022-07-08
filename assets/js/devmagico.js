@@ -100,11 +100,13 @@ function ac(element, id) {
   --id
   cardImg.setAttribute('src', element[id].imagen)
   title.innerHTML = `${element[id].personaje}`
-  subtitleFecha.innerHTML = `${element[id].casaDeHogwarts}`
+  subtitleAutor.innerHTML = `Apodo ${element[id].apodo}`
+  subtitleFecha.innerHTML = `Casa de Hogwarts ${element[id].casaDeHogwarts}`
+  description.innerHTML = `Interpretado por ${element[id].interpretado_por}`
 
   wrapperData.appendChild(title)
-  wrapperData.appendChild(subtitleFecha)
   wrapperData.appendChild(subtitleAutor)
+  wrapperData.appendChild(subtitleFecha)
   wrapperData.appendChild(description)
   wrapper.appendChild(cardImg)
   wrapper.appendChild(wrapperData)
@@ -186,4 +188,4 @@ function init() {
 }
 
 init()
-window.onload = switchOption('sobre')
+window.onload = switchOption('livro')
