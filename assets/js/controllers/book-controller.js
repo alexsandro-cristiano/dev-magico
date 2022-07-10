@@ -1,4 +1,3 @@
-import * as Page from './page-controller.js'
 import * as Request from '../services/request-service.js'
 import * as Book from '../views/book-view.js'
 

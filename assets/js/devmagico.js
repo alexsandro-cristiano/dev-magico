@@ -1,7 +1,7 @@
 import * as Sidebar from './controllers/sidebar-controler.js'
 import * as request from './request.js'
 import * as renderCard from './card.js'
-
+/*
 const main = document.querySelector('#main')
 
 
@@ -93,7 +93,7 @@ function ac(element, id) {
   modalConteudo.appendChild(wrapper)
   fecharModal(modal, modalConteudo)
 }
-
+*/
 
 
 Sidebar.init()
