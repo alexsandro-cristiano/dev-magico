@@ -3,8 +3,6 @@ import * as request from './request.js'
 import * as renderCard from './card.js'
 
 const main = document.querySelector('#main')
-let antigo = ''
-let chave = 1
 
 
 function fecharModal(modal, modalConteudo) {
@@ -95,78 +93,11 @@ function ac(element, id) {
   modalConteudo.appendChild(wrapper)
   fecharModal(modal, modalConteudo)
 }
-async function switchOption(option) {
-  let url = 'https://fedeperin-harry-potter-api.herokuapp.com/'
-  let informations = []
-  activateMenuAtCurrentItem(option)
-  switch (option) {
-    case 'livro':
-      url += 'libros'
-      main.innerHTML = ''
-      main.classList.add('list')
-      informations = await request.getJson(url)
-      for (const inf of informations) {
-        renderCard.renderLibros(inf, main)
-      }
-      const libros = document.querySelectorAll('.libro')
-      console.log(libros)
-      libros.forEach(el => {
-        el.addEventListener('click', () => {
-          dc(informations, el.id)
-        })
-      })
-      break
-    case 'personagem':
-      url += 'personajes'
-      informations = await request.getJson(url)
-      main.innerHTML = ''
-      main.classList.add('list')
-      for (const inf of informations) {
-        renderCard.renderPersonagem(inf, main)
-      }
-      const personagem = document.querySelectorAll('.personagem')
-      personagem.forEach(el => {
-        el.addEventListener('click', () => {
-          ac(informations, el.id)
-        })
-      })
-      break
-    case 'fentico':
-      url += 'hechizos'
-      informations = await request.getJson(url)
-      main.innerHTML = ''
-      main.classList.add('list')
-      for (const inf of informations) {
-        renderCard.renderFentico(inf, main)
-      }
-      break
-    case 'sobre':
-      main.innerHTML = ''
-      main.classList.remove('list')
 
-      break
-  }
-}
 
-function activateMenuAtCurrentItem(novo) {
-  document.getElementById(`${novo}`).classList.add('active')
-  if (antigo !== '') {
-    document.getElementById(`${antigo}`).classList.remove('active')
-  }
-  antigo = novo
-}
 
-function init() {
-  Sidebar.init()
-  const sidebarMenuList = document.getElementById('list')
-  
-  sidebarMenuList.addEventListener('click', event => {
-    switchOption(event.target.id)
-  })
-}
-
-init()
-window.onload = switchOption('sobre')
+Sidebar.init()
+//window.onload = switchOption('sobre')
 
 /**
  * MVC
