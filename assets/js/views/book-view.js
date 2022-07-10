@@ -1,3 +1,4 @@
+import * as PageController from "../controllers/page-controller.js";
 export function createCard(element) {
   const li = document.createElement("li");
   const wrapper = document.createElement("div");
@@ -31,4 +32,5 @@ export function render(elements) {
   for (const element of elements) {
     main.appendChild(createCard(element));
   }
+  PageController.observerBook(elements);
 }

@@ -6,13 +6,4 @@ export async function init(){
     let datas = []   
     datas = await Request.getJson(url)
     Book.render(datas)
-
-   /*
-    const libros = document.querySelectorAll('.libro')
-    console.log(libros)
-    libros.forEach(el => {
-      el.addEventListener('click', () => {
-        dc(informations, el.id)
-      })
-    })*/
 }
