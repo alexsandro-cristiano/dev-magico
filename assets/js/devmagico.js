@@ -1,30 +1,11 @@
+import * as Sidebar from './controllers/sidebar-controler.js'
 import * as request from './request.js'
 import * as renderCard from './card.js'
 
 const main = document.querySelector('#main')
 let antigo = ''
 let chave = 1
-function modificarLogo() {
-  const logo = document.querySelector('.logo__title')
-  if (chave == 1) {
-    logo.innerHTML = 'Dev Mágico'
-    chave = 0
-  } else {
-    logo.innerHTML = 'DM'
-    chave = 1
-  }
-  logo.classList.toggle('logo__title--open')
-}
 
-function expandSidebar() {
-  modificarLogo()
-  const sidebar = document.querySelector('.sidebar')
-  const itemList = document.querySelectorAll('.nav__item__title')
-  sidebar.classList.toggle('sidebar--open')
-  for (const item of itemList) {
-    item.classList.toggle('nav__item__title--open')
-  }
-}
 
 function fecharModal(modal, modalConteudo) {
   console.log('fechar modal')
@@ -176,16 +157,21 @@ function activateMenuAtCurrentItem(novo) {
 }
 
 function init() {
-  const menuIcon = document.querySelector('.js-icon')
+  Sidebar.init()
   const sidebarMenuList = document.getElementById('list')
-
-  menuIcon.addEventListener('click', () => {
-    expandSidebar()
-  })
+  
   sidebarMenuList.addEventListener('click', event => {
     switchOption(event.target.id)
   })
 }
 
 init()
-window.onload = switchOption('livro')
+window.onload = switchOption('sobre')
+
+/**
+ * MVC
+ * 
+ * Model -> livro | Personagem | fentiço
+ * View ->
+ * Controler -> Livro | Personagem | fentiço | modal
+ */
