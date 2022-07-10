@@ -1,5 +1,6 @@
 import * as Book from "./book-controller.js";
 import * as Caracter from "./caracter-controller.js";
+import * as Spell from "./spell-controller.js";
 let chave = false;
 function changeLogo() {
   const logo = document.querySelector(".logo__title");
@@ -33,18 +34,7 @@ async function handleClickOption(option) {
       Caracter.init();
       break;
     case "fentico":
-      url += "hechizos";
-      informations = await request.getJson(url);
-      main.innerHTML = "";
-      main.classList.add("list");
-      for (const inf of informations) {
-        renderCard.renderFentico(inf, main);
-      }
-      break;
-    case "sobre":
-      main.innerHTML = "";
-      main.classList.remove("list");
-
+      Spell.init();
       break;
   }
 }
