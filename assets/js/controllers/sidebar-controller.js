@@ -1,4 +1,5 @@
-import * as Libro from "./book-controller.js";
+import * as Book from "./book-controller.js";
+import * as Caracter from "./caracter-controller.js";
 let chave = false;
 function changeLogo() {
   const logo = document.querySelector(".logo__title");
@@ -23,25 +24,13 @@ function handleClickMenuIcon() {
 }
 
 async function handleClickOption(option) {
-  changeActiveCurrentItem(option)
+  changeActiveCurrentItem(option);
   switch (option) {
     case "livro":
-      Libro.init();
+      Book.init();
       break;
     case "personagem":
-      url += "personajes";
-      informations = await request.getJson(url);
-      main.innerHTML = "";
-      main.classList.add("list");
-      for (const inf of informations) {
-        renderCard.renderPersonagem(inf, main);
-      }
-      const personagem = document.querySelectorAll(".personagem");
-      personagem.forEach((el) => {
-        el.addEventListener("click", () => {
-          ac(informations, el.id);
-        });
-      });
+      Caracter.init();
       break;
     case "fentico":
       url += "hechizos";
@@ -59,7 +48,7 @@ async function handleClickOption(option) {
       break;
   }
 }
-let antigo = ''
+let antigo = "";
 function changeActiveCurrentItem(novo) {
   document.getElementById(`${novo}`).classList.add("active");
   if (antigo !== "") {

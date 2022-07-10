@@ -1,4 +1,5 @@
 import * as PageController from "../controllers/page-controller.js";
+import * as Main from "../utils/manipulationMain.js";
 export function createCard(element) {
   const li = document.createElement("li");
   const wrapper = document.createElement("div");
@@ -27,10 +28,10 @@ export function createCard(element) {
 }
 
 export function render(elements) {
-  const main = document.querySelector("#main");
-  main.classList.add("list");
+  Main.clear();
+  Main.addClass(true);
   for (const element of elements) {
-    main.appendChild(createCard(element));
+    Main.addChildren(createCard(element));
   }
   PageController.observerBook(elements);
 }

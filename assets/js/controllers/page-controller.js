@@ -1,12 +1,19 @@
 import * as modalController from "./modal-controller.js";
+
 export function observerBook(elements) {
-  const libros = document.querySelectorAll(".libro");
-  libros.forEach((item) => {
-    item.addEventListener("click", () => {
-      modalController.open("book", elements, item.id);
+  const books = document.querySelectorAll(".libro");
+  books.forEach((book) => {
+    book.addEventListener("click", () => {
+      modalController.open("book", elements, book.id);
     });
   });
 }
-function escutaPersonagem() {
-  modalController.open("cacracter");
+export function observerCaracter(elements) {
+  const caracters = document.querySelectorAll(".personagem");
+  caracters.forEach((caracter) => {
+    caracter.addEventListener("click", () => {
+      modalController.open("cacracter",elements, caracter.id);
+    });
+  });
+
 }
