@@ -1,0 +1,49 @@
+.modalContainer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+.modalContainer.active {
+  visibility: visible;
+}
+
+.modalConteudo {
+  color: #000;
+  background-color: #f0f2f5f3;
+  padding: 2.4rem;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+  border-radius: 8px;
+  position: relative;
+}
+.modalConteudo .fechar {
+  font-size: 2rem;
+  position: absolute;
+  top: -18px;
+  right: 3px;
+}
+.modalConteudo .wrapper {
+  display: flex;
+  gap: 0 2rem;
+}
+.wrapper .informacao .description {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.wrapper .informacao .sub-title {
+  font-size: 1.3rem;
+}
+.wrapper .informacao .title {
+  font-weight: 600;
+  font-size: 2.5rem;
+}

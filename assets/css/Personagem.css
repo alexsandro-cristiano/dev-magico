@@ -1,0 +1,33 @@
+/* Cartão de Personagem */
+.personagem .wrapper {
+  width: 100%;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+} 
+
+.personagem .card {
+  width: 15rem;
+  height: 25rem;
+  border-radius: 8px;
+  opacity: 60%;
+  transition: all .2s;
+}
+.personagem .card:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+.personagem .card__img img {
+  box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.596);
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  height: 20rem;
+  object-fit: cover;
+}
+.personagem .card__name {
+  margin-top: 1rem;
+  margin-left: .4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
