@@ -29,6 +29,7 @@ button {
   padding: 0;
   border: 0;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
 .shadow {
